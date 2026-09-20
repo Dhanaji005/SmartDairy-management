@@ -1,4 +1,9 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+
+// Supabase Configuration (if direct frontend access is needed)
+export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
+export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
 
 // Helper for fetch with JSON parsing and fallback error handling
 async function request(endpoint, options = {}) {
